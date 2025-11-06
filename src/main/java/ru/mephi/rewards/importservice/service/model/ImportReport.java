@@ -1,4 +1,11 @@
 package ru.mephi.rewards.importservice.service.model;
 
-public record ImportReport() {
+import java.util.List;
+
+public record ImportReport(
+        int processed,
+        int saved,
+        int skipped,
+        List<ImportError> errors
+) {
 }
