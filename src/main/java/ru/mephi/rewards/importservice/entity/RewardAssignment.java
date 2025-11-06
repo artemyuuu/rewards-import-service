@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;                  // ← добавить для exclude
+import lombok.ToString;
 import java.time.OffsetDateTime;
 
 @Entity
@@ -23,7 +23,7 @@ public class RewardAssignment {
     @Column(name = "id")
     private Long id;
 
-    @ToString.Exclude                    // ← чтобы не было рекурсии в логах
+    @ToString.Exclude
     @ManyToOne(optional = false)
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
